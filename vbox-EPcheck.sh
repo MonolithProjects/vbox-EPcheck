@@ -2,7 +2,7 @@
 #Script will allign the VBox Extension Pack with currently installed VBox version
 #Good idea to run it after VBox update ;-)
 
-VBOXVER=`vboxmanage --version | cut -f1 -d"r"`
+VBOXVER=`vboxmanage --version | cut -f1 -d"r" -d"_"`
 VBOXEXTPACKVER=`vboxmanage list extpacks | grep Version | awk '{print $2}'`
 
 if [ "$VBOXVER" != "$VBOXEXTPACKVER" ]; then
